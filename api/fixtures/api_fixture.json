@@ -1,0 +1,27 @@
+[
+    {
+        "model" : "api.task",
+        "pk" : 1,
+        "fields":{
+            "title":"Learn rest api",
+            "completed": false
+        }
+    },
+    {
+        "model" : "api.task",
+        "pk" : 2,
+        "fields":{
+            "title":"Learn React",
+            "completed": false
+        }
+    },
+    {
+        "model" : "api.task",
+        "pk" : 3,
+        "fields":{
+            "title":"Study english",
+            "completed": false
+        }
+    }
+
+]

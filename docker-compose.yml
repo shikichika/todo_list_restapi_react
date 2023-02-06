@@ -1,0 +1,29 @@
+version: '3'
+services:
+  api:
+    container_name: "todo_with_docker_web"
+    build: .
+    command: python3 manage.py runserver 0.0.0.0:8000
+    working_dir: /code
+    ports:
+      - 8000:8000
+    volumes:
+      - .:/code
+    depends_on:
+      - db
+  
+  
+  db:
+    container_name: "todo_with_docker_db"
+    image: mysql:8.0
+    restart: always
+    environment:
+      MYSQL_DATABASE: "todo_with_docker_mysql"
+      MYSQL_USER: django
+      MYSQL_ROOT_PASSWORD: django
+      MYSQL_ALLOW_EMPTY_PASSWORD: 'yes'
+    volumes:
+      - ./mysql:/var/lib/mysql
+    ports:
+      - 3306:3306
+
